@@ -69,7 +69,7 @@ A production-ready release-grade APK is pre-packaged and placed in the root of t
 ### Steps
 1. **Clone the repository and navigate to the project:**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/affanasgher67-dev/fitness-tracking-app.git
    cd FitnessApp/FitnessApp
    ```
 2. **Install all dependencies:**
