@@ -8,6 +8,16 @@ A premium, fully-featured React Native mobile application designed to help users
 
 ---
 
+## 📸 Screenshots
+
+Here are actual high-resolution screenshots captured directly from the running production application:
+
+| Login & Welcome Screen | Premium Dashboard | User Profile Details |
+| :---: | :---: | :---: |
+| <img src="screenshots/screen1.png" width="230"/> | <img src="screenshots/screen2.png" width="230"/> | <img src="screenshots/screen3.png" width="230"/> |
+
+---
+
 ## 🌟 Key Features
 
 - **👑 Dynamic Dashboard (Home Tab)**: Displays a warm personalized greeting (`"Hello, Affan! 👋"`), a glowing flame-themed streak counter card, today's current workout summary with quick-start actions, and the schedule outline.
