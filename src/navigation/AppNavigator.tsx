@@ -22,8 +22,8 @@ export default function AppNavigator() {
 
   useEffect(() => {
     const checkLogin = async () => {
-        // Initialize auth from storage first
-        await initializeAuth();
+      // Initialize auth from storage first
+      await initializeAuth();
       const loggedIn = await isLoggedIn();
       setSessionLoggedIn(loggedIn);
       if (loggedIn) {
@@ -84,7 +84,7 @@ export default function AppNavigator() {
         initialParams={initialPlan ? { duration: initialPlan } : undefined}
       />
       <Stack.Screen
-        name="Exercises"
+        name="DayExercises"
         component={ExerciseScreen}
         options={{ title: 'Exercises' }}
       />

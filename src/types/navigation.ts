@@ -9,7 +9,7 @@ export type RootStackParamList = {
     duration: number;
   };
 
-  Exercises: {
+  DayExercises: {
     day: number;
     level: 'beginner' | 'intermediate' | 'advanced';
   };

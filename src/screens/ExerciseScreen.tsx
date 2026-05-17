@@ -15,7 +15,7 @@ import { theme } from '../theme/theme';
 import ScreenBackground from '../components/ScreenBackground';
 import { getProgress } from '../utils/progress';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Exercises'>;
+type Props = NativeStackScreenProps<RootStackParamList, 'DayExercises'>;
 
 export default function ExercisesScreen({ route, navigation }: Props) {
   const { day, level } = route.params;

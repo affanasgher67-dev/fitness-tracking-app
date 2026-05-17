@@ -96,60 +96,68 @@ export default function LoginScreen({ navigation }: Props) {
   return (
     <ScreenBackground source={require('../assets/images/login-bg.jpg')} overlay="dark">
       <SafeAreaView style={styles.container}>
-        <Text style={styles.title}>{isLogin ? 'Welcome Back' : 'Create Profile'}</Text>
+        <View style={styles.logoBadge}>
+          <Text style={styles.logoBadgeText}>🔥 GYM ELITE</Text>
+        </View>
+
+        <View style={styles.avatarIconContainer}>
+          <Text style={styles.avatarIcon}>{isLogin ? '🔑' : '👤'}</Text>
+        </View>
+
+        <Text style={styles.title}>{isLogin ? 'Sign In' : 'Create Profile'}</Text>
         <Text style={styles.subtitle}>
           {isLogin
-            ? 'Unlock your potential'
-            : 'Join the elite community'}
+            ? 'Access your elite workout routines'
+            : 'Join the community and conquer goals'}
         </Text>
 
-        <View style={styles.cardGradient}>
-          <Animated.View style={[styles.card, { height: cardHeight }]} pointerEvents="auto">
-            <AppInput
-              placeholder="Email"
-              value={email}
-              onChangeText={(text) => {
-                setEmail(text);
-                setError('');
-              }}
-            />
+        <Animated.View style={[styles.card, { height: cardHeight }]} pointerEvents="auto">
+          <AppInput
+            placeholder="Email Address"
+            value={email}
+            onChangeText={(text) => {
+              setEmail(text);
+              setError('');
+            }}
+          />
 
-            <AppInput
-              placeholder="Password"
-              value={password}
-              onChangeText={(text) => {
-                setPassword(text);
-                setError('');
-              }}
-              secureTextEntry
-            />
+          <AppInput
+            placeholder="Password"
+            value={password}
+            onChangeText={(text) => {
+              setPassword(text);
+              setError('');
+            }}
+            secureTextEntry
+          />
 
-            {!isLogin && (
-              <Animated.View style={{ opacity: confirmOpacity }}>
-                <AppInput
-                  placeholder="Confirm Password"
-                  value={confirmPassword}
-                  onChangeText={(text) => {
-                    setConfirmPassword(text);
-                    setError('');
-                  }}
-                  secureTextEntry
-                />
-              </Animated.View>
-            )}
+          {!isLogin && (
+            <Animated.View style={{ opacity: confirmOpacity }}>
+              <AppInput
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChangeText={(text) => {
+                  setConfirmPassword(text);
+                  setError('');
+                }}
+                secureTextEntry
+              />
+            </Animated.View>
+          )}
 
-            {error !== '' && <Text style={styles.errorText}>{error}</Text>}
+          {error !== '' && <Text style={styles.errorText}>{error}</Text>}
 
-            <AppButton title={isLogin ? 'Login' : 'Sign Up'} onPress={handleSubmit} variant="primary" />
+          <View style={styles.buttonWrapper}>
+            <AppButton title={isLogin ? 'Sign In' : 'Register Now'} onPress={handleSubmit} variant="primary" />
+          </View>
 
-            <TouchableOpacity style={styles.switchTextContainer} onPress={toggleMode}>
-                <Text style={styles.switchText}>
-                {isLogin ? "Don't have an account? " : 'Already have an account? '}
-                <Text style={styles.linkText}>{isLogin ? 'Sign Up' : 'Login'}</Text>
-              </Text>
-            </TouchableOpacity>
-          </Animated.View>
-        </View>
+          <TouchableOpacity style={styles.switchTextContainer} onPress={toggleMode}>
+            <Text style={styles.switchText}>
+              {isLogin ? "New here? " : 'Already registered? '}
+              <Text style={styles.linkText}>{isLogin ? 'Create Account' : 'Sign In'}</Text>
+            </Text>
+          </TouchableOpacity>
+        </Animated.View>
       </SafeAreaView>
     </ScreenBackground>
   );
@@ -159,46 +167,78 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal: theme.spacing.md,
-    paddingVertical: theme.spacing.lg,
+    paddingHorizontal: theme.spacing.lg,
+  },
+  logoBadge: {
+    backgroundColor: '#ffffff',
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    borderRadius: 8,
+    alignSelf: 'center',
+    marginBottom: theme.spacing.md,
+  },
+  logoBadgeText: {
+    color: '#000000',
+    fontSize: 11,
+    fontWeight: '900',
+    letterSpacing: 1.5,
+  },
+  avatarIconContainer: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+    borderWidth: 1.5,
+    borderColor: '#ffffff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    marginBottom: theme.spacing.sm,
+  },
+  avatarIcon: {
+    fontSize: 26,
   },
   title: {
-    ...theme.text.title,
-    color: theme.colors.textPrimary,
-    marginBottom: theme.spacing.lg,
+    fontSize: 32,
+    fontWeight: '900',
+    color: '#ffffff',
     textAlign: 'center',
-    fontSize: 28,
+    letterSpacing: 1,
+    marginBottom: 4,
   },
   subtitle: {
     color: theme.colors.textSecondary,
     marginBottom: theme.spacing.xl,
     textAlign: 'center',
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: '600',
     letterSpacing: 0.5,
   },
-  cardGradient: {
-    borderRadius: theme.radius.sm,
-    overflow: 'hidden',
-    borderWidth: 1,
-    borderColor: theme.colors.border,
-    ...theme.shadow.lg,
-  },
   card: {
-    backgroundColor: 'rgba(0,0,0,0.7)',
-    paddingVertical: theme.spacing.lg,
+    backgroundColor: 'rgba(20, 20, 20, 0.75)',
+    borderWidth: 1.5,
+    borderColor: 'rgba(255, 255, 255, 0.12)',
+    borderRadius: 24,
+    paddingVertical: theme.spacing.xl,
     paddingHorizontal: theme.spacing.lg,
-    borderRadius: theme.radius.sm,
     width: '100%',
-    maxWidth: 520,
+    maxWidth: 480,
     alignSelf: 'center',
+    shadowColor: '#000000',
+    shadowOpacity: 0.5,
+    shadowRadius: 15,
+    shadowOffset: { width: 0, height: 6 },
+    elevation: 10,
+  },
+  buttonWrapper: {
+    marginTop: 10,
   },
   errorText: {
-    color: theme.colors.textMuted,
+    color: '#FF4444',
     marginBottom: theme.spacing.sm,
-    marginTop: theme.spacing.sm,
     textAlign: 'center',
-    fontWeight: '600',
+    fontWeight: '700',
+    fontSize: 13,
   },
   switchTextContainer: {
     marginTop: theme.spacing.lg,
@@ -206,10 +246,12 @@ const styles = StyleSheet.create({
   },
   switchText: {
     color: theme.colors.textSecondary,
-    fontSize: 14,
+    fontSize: 13,
+    fontWeight: '600',
   },
   linkText: {
-    color: theme.colors.textPrimary,
-    fontWeight: '700',
+    color: '#ffffff',
+    fontWeight: '800',
+    textDecorationLine: 'underline',
   },
 });

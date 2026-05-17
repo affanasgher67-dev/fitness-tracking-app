@@ -188,7 +188,7 @@ export default function PlanDetailsScreen({ navigation, route }: Props) {
             <TouchableOpacity
               key={day.day}
               onPress={() =>
-                navigation.navigate('Exercises', {
+                navigation.navigate('DayExercises', {
                   level: planLevel,
                   day: day.day,
                 })

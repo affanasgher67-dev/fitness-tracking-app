@@ -156,7 +156,7 @@ export default function HomeScreen({ navigation }: Props) {
             <TouchableOpacity
               style={styles.todayButton}
               onPress={() =>
-                navigation.navigate('Exercises', {
+                navigation.navigate('DayExercises', {
                   day: todayWorkout.day,
                   level: planLevel,
                 })
@@ -258,7 +258,7 @@ export default function HomeScreen({ navigation }: Props) {
             <TouchableOpacity
               key={day.day}
               onPress={() =>
-                navigation.navigate('Exercises', {
+                navigation.navigate('DayExercises', {
                   day: day.day,
                   level: planLevel,
                 })
