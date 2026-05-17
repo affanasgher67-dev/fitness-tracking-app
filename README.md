@@ -12,9 +12,15 @@ A premium, fully-featured React Native mobile application designed to help users
 
 Here are actual high-resolution screenshots captured directly from the running production application:
 
-| Login & Welcome Screen | Premium Dashboard | User Profile Details |
+### 🌟 Phase 1: Authentication & Discovery
+| Login & Sign In | Premium Dashboard | Select Workout Plan |
 | :---: | :---: | :---: |
 | <img src="screenshots/screen1.png" width="230"/> | <img src="screenshots/screen2.png" width="230"/> | <img src="screenshots/screen3.png" width="230"/> |
+
+### 🏋️‍♂️ Phase 2: Active Workouts & Analytics
+| Workout Plan Details | Day Exercises Library | Interactive Timer | Profile & Ranks |
+| :---: | :---: | :---: | :---: |
+| <img src="screenshots/sceen4.png" width="180"/> | <img src="screenshots/screen5.png" width="180"/> | <img src="screenshots/screen6.png" width="180"/> | <img src="screenshots/screen7.png" width="180"/> |
 
 ---
 
